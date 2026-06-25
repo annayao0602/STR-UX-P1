@@ -13,7 +13,7 @@ function StatusDot({ correct }: { correct: boolean }) {
 
 export function QuestionPanel({ questions }: { questions: QuestionRow[] }) {
   return (
-    <section className="overflow-hidden rounded-lg bg-white shadow-[0_2px_12px_rgba(0,0,0,0.3)]">
+    <section className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-[0_2px_12px_rgba(0,0,0,0.3)]">
       <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)] border-b border-[#e5e5e5] px-8 py-4">
         <h2 className="text-center text-[16px] leading-[18px] text-[#2d2d2d]">
           QUESTIONS
@@ -26,11 +26,11 @@ export function QuestionPanel({ questions }: { questions: QuestionRow[] }) {
         </h2>
       </div>
 
-      <div className="max-h-[420px] overflow-y-auto">
+      <div className="min-h-0 flex-1 overflow-hidden">
         {questions.map((row, index) => (
           <div
             key={row.id}
-            className={`grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)] gap-4 px-8 py-4 ${
+            className={`grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)] gap-4 px-8 py-2.5 ${
               index < questions.length - 1 ? "border-b border-[#ececec]" : ""
             }`}
           >
